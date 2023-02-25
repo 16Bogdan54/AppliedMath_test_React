@@ -1,2 +1,2 @@
 ﻿# Functions
- -Gaussian method for matrices
+ - Gaussian method for matrices
