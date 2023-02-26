@@ -43,12 +43,12 @@ export const gauss = (matrix: number[][]):number[] =>{
     return solution.map((num) => (Math.round(num * 100) / 100));
   }
   
-  const matrix: number[][] = [
-    [2 , 7, 3 , 980],
-    [3, 4, 5, 780],
-    [5, 6, 1, 860],
-  ];
+  // const matrix: number[][] = [
+  //   [2 , 7, 3 , 980],
+  //   [3, 4, 5, 780],
+  //   [5, 6, 1, 860],
+  // ];
 
-  const solution: number[] = gauss(matrix);
+  // const solution: number[] = gauss(matrix);
 
-  console.log(solution)
+  // console.log(solution)

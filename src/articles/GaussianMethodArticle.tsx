@@ -1,6 +1,6 @@
 const GaussianMethodArticle = () => {
     return (
-        <div>
+        <div className="mt-14 p-6">
             <h2>The Gaussian method</h2>
             <p>The Gaussian method, also known as Gaussian elimination or row reduction, is a powerful mathematical technique for solving systems of linear equations. It is named after the German mathematician Carl Friedrich Gauss, who developed the method in the early 19th century. The Gaussian method is widely used in many fields of science and engineering, including physics, economics, and computer science.</p>
             <p>The Gaussian method works by transforming a system of linear equations into an equivalent system that is easier to solve. The method involves three basic operations: swapping two equations, multiplying an equation by a constant, and adding a multiple of one equation to another. These operations are used to eliminate variables and create a triangular system of equations that can be easily solved.</p>
