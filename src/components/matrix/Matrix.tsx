@@ -1,8 +1,6 @@
 import {useState} from 'react';
 import { gauss } from '../../functions/gauss';
 
-// type Matrix = string[][];
-
 interface Props {
   rows: number;
   cols: number;
@@ -36,7 +34,7 @@ const Matrix = ({ rows, cols }: Props) => {
   }
 
   return (
-    <div className='p-4 mt-12'>
+    <div className='p-2 px-4'>
       <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 my-4'>
         <tbody>
           {matrix.map((row, rowIndex) => (
