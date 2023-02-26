@@ -18,9 +18,9 @@ const Matrix = ({ rows, cols }: Props) => {
     setSolution(gauss(matrix))
   }
 
-  const updateMatrix = (row: number, col: number, value: string) => {
+  const updateMatrix = (row: number, col: number, value: number) => {
     const newMatrix = [...matrix];
-    newMatrix[row][col] = Number.parseInt(value)
+    newMatrix[row][col] = value
     setMatrix(newMatrix);
   }
 
@@ -30,7 +30,7 @@ const Matrix = ({ rows, cols }: Props) => {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="text"
         value={matrix[row][col]}
-        onChange={(e) => updateMatrix(row, col, e.target.value)}
+        onChange={(e) => updateMatrix(row, col, Number.parseFloat(e.target.value))}
       />
     );
   }
