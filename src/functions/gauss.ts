@@ -1,4 +1,4 @@
-export const gauss = (matrix: any) =>{
+export const gauss = (matrix: number[][]):number[] =>{
     // Copy the matrix to avoid modifying the original
     matrix = matrix.slice();
   
@@ -8,6 +8,7 @@ export const gauss = (matrix: any) =>{
     for (let i = 0; i < rows; i++) {
       // Find the row with the largest absolute value in the i-th column
       let maxRow = i;
+
       for (let j = i + 1; j < rows; j++) {
         if (Math.abs(matrix[j][i]) > Math.abs(matrix[maxRow][i])) {
           maxRow = j;
@@ -30,6 +31,7 @@ export const gauss = (matrix: any) =>{
   
     // Back-substitute to find the solution
     const solution = new Array(rows).fill(0);
+
     for (let i = rows - 1; i >= 0; i--) {
       let sum = 0;
       for (let j = i + 1; j < columns - 1; j++) {
@@ -38,5 +40,15 @@ export const gauss = (matrix: any) =>{
       solution[i] = (matrix[i][columns - 1] - sum) / matrix[i][i];
     }
   
-    return solution;
+    return solution.map((num) => (Math.round(num * 100) / 100));
   }
+  
+  const matrix: number[][] = [
+    [2 , 7, 3 , 980],
+    [3, 4, 5, 780],
+    [5, 6, 1, 860],
+  ];
+
+  const solution: number[] = gauss(matrix);
+
+  console.log(solution)

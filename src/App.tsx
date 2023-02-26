@@ -1,8 +1,12 @@
+import Matrix from "./components/matrix/Matrix"
+import GaussianMethodArticle from "./articles/GaussianMethodArticle"
+
 const App = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world</h1>
+      <Matrix rows={3} cols={4}/>
+      <GaussianMethodArticle/>
     </div>
   )
 }
