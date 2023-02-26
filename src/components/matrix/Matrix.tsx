@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { gauss } from '../../functions/gauss';
 
 import style from '../../styles/matrix.module.css'
+import Button from "@mui/material/Button";
 
 interface Props {
   rows: number;
@@ -48,7 +49,7 @@ const Matrix = ({ rows, cols }: Props) => {
         ))}
       </tbody>
     </table>
-    <button onClick={submit} type="button" className={style.submit_btn}>Submit</button>
+      <Button variant="outlined" onClick={submit} type="button">Submit</Button>
     <p>Solution:{solution.map((number, index) => (
       <span className='mx-2' key={index}>{number}</span>
     ))}</p>
