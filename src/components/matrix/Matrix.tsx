@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import { gauss } from '../../functions/gauss';
 
+import style from '../../styles/matrix.module.css'
+
 interface Props {
   rows: number;
   cols: number;
@@ -25,7 +27,7 @@ const Matrix = ({ rows, cols }: Props) => {
   const renderCell = (row: number, col: number) => {
     return (
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className={style.matrix_cell}
         type="text"
         value={matrix[row][col]}
         onChange={(e) => updateMatrix(row, col, Number.parseFloat(e.target.value))}
@@ -35,19 +37,19 @@ const Matrix = ({ rows, cols }: Props) => {
 
   return (
     <div className='p-2 px-4'>
-      <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 my-4'>
+      <table className={style.matrix_table}>
         <tbody>
           {matrix.map((row, rowIndex) => (
-          <tr className='border-b border-gray-200 dark:border-gray-700' key={rowIndex}>
+          <tr className={style.matrix_tr} key={rowIndex}>
             {row.map((col, colIndex) => (
-              <td className='px-6 py-4 bg-gray-50 dark:bg-gray-800' key={colIndex}>{renderCell(rowIndex, colIndex)}</td>
+              <td className={style.matrix_td} key={colIndex}>{renderCell(rowIndex, colIndex)}</td>
             ))}
           </tr>
         ))}
       </tbody>
     </table>
-    <button onClick={submit} type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Submit</button>
-    <p>Sololution:{solution.map((number, index) => (
+    <button onClick={submit} type="button" className={style.submit_btn}>Submit</button>
+    <p>Solution:{solution.map((number, index) => (
       <span className='mx-2' key={index}>{number}</span>
     ))}</p>
     </div>
