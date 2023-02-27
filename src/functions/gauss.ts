@@ -1,6 +1,6 @@
 
 
-export const matr = (matrix: number[][]):number[][] =>{
+export const gauss = (matrix: number[][]):number[][] =>{
     function divide(matrix:number[][], y:number) {
         let divide_by = matrix[y][y];
         for (let x = 0; x < 4; x++) {

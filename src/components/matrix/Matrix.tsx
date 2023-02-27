@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { matr } from '../../functions/gauss';
+import { gauss } from '../../functions/gauss';
 
 import style from '../../styles/matrix.module.css'
 import Button from "@mui/material/Button";
@@ -16,7 +16,7 @@ const Matrix = ({ rows, cols }: Props) => {
   );
   
   const submit = () => {
-    setSolution(matr(matrix).map(arr => arr[arr.length - 1]))
+    setSolution(gauss(matrix).map(arr => arr[arr.length - 1]))
   }
 
   const updateMatrix = (row: number, col: number, value: number) => {
