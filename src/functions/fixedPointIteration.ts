@@ -1,4 +1,4 @@
-export const fixedPointIteration5 = (a: number[][], x0: number[], tolerance: number = 1e-6, maxIterations: number = 1000): number[] => {
+export const fixedPointIteration = (a: number[][], x0: number[], tolerance: number = 1e-6, maxIterations: number = 1000): number[] => {
     const n = a.length;
     let x = [...x0];
     let error = Number.MAX_VALUE;
@@ -49,6 +49,6 @@ const a = [
 
 const x0 = [21, 1,2,0,5]
 
-const solution = fixedPointIteration5(a, x0);
+const solution = fixedPointIteration(a, x0);
 
 console.log(solution)
