@@ -31,15 +31,6 @@ export const fixedPointIteration = (a: number[][], x0: number[], tolerance: numb
     return x.map((num) => Math.round(num));
 }
 
-// const a = [
-//     [5,1,-1,1,42],
-//     [1, -4, 1, -1, 8],
-//     [-1, 1, 4, 1, 1],
-//     [1, 2, 1, -5, 16]
-// ]
-//
-// const x0 = [21, 1,2,0,5]
-
 const a = [
     [5,1,-1,1,42],
     [1, -4, 1, -1, 8],
