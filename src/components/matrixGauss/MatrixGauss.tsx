@@ -9,7 +9,7 @@ interface Props {
   cols: number;
 }
 
-const Matrix = ({ rows, cols }: Props) => {
+const MatrixGauss = ({ rows, cols }: Props) => {
   const [solution, setSolution] = useState<number[]>([])
   const [matrix, setMatrix] = useState<number[][]>(
     Array.from({ length: rows }, () => Array(cols).fill(''))
@@ -57,4 +57,4 @@ const Matrix = ({ rows, cols }: Props) => {
   );
 }
 
-export default Matrix;
+export default MatrixGauss;
