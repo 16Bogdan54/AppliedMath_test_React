@@ -2,6 +2,7 @@ import Navbar from "./components/nav/Navbar"
 import MatrixGauss from "./components/matrixGauss/MatrixGauss"
 import Grid from "@mui/material/Grid";
 import {Container, Typography} from "@mui/material";
+import FixedPointIteration from "./components/fixedPoinIteration/FixedPointIteration";
 
 const App = () => {
 
@@ -13,6 +14,9 @@ const App = () => {
              <Grid item xs={12}>
                  <Typography variant="h5">The Gaussian method</Typography>
                  <MatrixGauss rows={3} cols={4}/>
+             </Grid>
+             <Grid item xs={12}>
+                 <FixedPointIteration/>
              </Grid>
          </Grid>
      </Container>

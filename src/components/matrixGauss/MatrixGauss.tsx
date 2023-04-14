@@ -1,12 +1,12 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import { gauss } from '../../functions/gauss';
 
 import style from '../../styles/matrix.module.css'
 import Button from "@mui/material/Button";
 
-interface Props {
-  rows: number;
-  cols: number;
+type Props = {
+  rows: number,
+  cols: number,
 }
 
 const MatrixGauss = ({ rows, cols }: Props) => {
