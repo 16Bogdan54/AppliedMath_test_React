@@ -3,10 +3,11 @@ import style from "../../styles/matrix.module.css";
 import React from "react";
 
 type Props = {
-    size: number
+    size: number,
+    setX0: Function
 }
 
-const X0_input = ({size}:Props) => {
+const X0_input = ({size, setX0}:Props) => {
     const [array, setArray] = useState<number[]>(
         Array(size).fill('')
     )
@@ -15,14 +16,15 @@ const X0_input = ({size}:Props) => {
         const newArray = [...array];
         newArray[pos] = value
         setArray(newArray);
+        setX0(newArray);
     }
 
-    const renderInputCell = (pos: number) => {
+    const renderInputCell = (pos: number, value: number) => {
         return (
             <input
                 className={style.matrix_cell}
-                type="text"
-                value={array[pos]}
+                type="number"
+                value={value}
                 onChange={(e) => updateArray(pos, Number.parseFloat(e.target.value))}
             />
         )
@@ -33,9 +35,12 @@ const X0_input = ({size}:Props) => {
             <table className={style.matrix_table}>
                 <tbody>
                     <tr>
+                        <td><h2>X0 array</h2></td>
+                    </tr>
+                    <tr>
                         {array.map((item, index) => (
                             <td className={style.matrix_td} key={index}>
-                                renderInputCell(item)
+                                {renderInputCell(index, item)}
                             </td>
                         ))}
                     </tr>
