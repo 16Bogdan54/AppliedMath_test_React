@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import style from "../../styles/matrix.module.css";
 import React from "react";
+import Typography from "@mui/material/Typography";
 
 type Props = {
     size: number,
@@ -35,7 +36,9 @@ const X0_input = ({size, setX0}:Props) => {
             <table className={style.matrix_table}>
                 <tbody>
                     <tr>
-                        <td><h2>X0 array</h2></td>
+                        <td>
+                            <Typography variant="h6">X0 array</Typography>
+                        </td>
                     </tr>
                     <tr>
                         {array.map((item, index) => (
