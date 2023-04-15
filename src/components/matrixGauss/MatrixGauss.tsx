@@ -30,7 +30,7 @@ const MatrixGauss = ({ rows, cols }: Props) => {
     return (
       <input
         className={style.matrix_cell}
-        type="text"
+        type="number"
         value={matrix[row][col]}
         onChange={(e) => updateMatrix(row, col, Number.parseFloat(e.target.value))}
       />
